@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>라스베가스 코리안 뉴스</title>
+    <title>라스베가스 코리언 뉴스</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
 
@@ -42,11 +42,11 @@
       }
     </style>
 
-    
     <!-- Custom styles for this template -->
     <link href="./assets/style.css" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
-  <body>
+  <body id="app">
     
 <header>
   <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
@@ -64,16 +64,17 @@
             <a class="nav-link" href="#newspapers">신문</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">안내</a>
+            <a class="nav-link" href="#newsinfo">광고안내</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">광고안내</a>
+            <a class="nav-link" href="#info">안내</a>
           </li>
         </ul>
-        <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
+        <div class="d-flex">
+          <a href="tel:17023430990" class="btn btn-outline-secondary">📞 702.343.0990</a>&nbsp;<a href="mailto:702korean@gmail.com" class="btn btn-outline-primary">📧 702korean@gmail.com</a>
+          <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button> -->
+        </div>
       </div>
     </div>
   </nav>
@@ -110,8 +111,6 @@
         </div>
       </div>
       <div class="carousel-item active carousel-item-start">
-        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> -->
-
         <div class="container">
           <div class="carousel-caption text-end">
             <h1>One more for good measure.</h1>
@@ -134,14 +133,14 @@
 
   <div class="container marketing">
 
-    <!-- newspapers -->
+    <!-- 신문 -->
     <div id="newspapers">
       <div class="row pt-5">
         <div class="col-lg-4 col-md-6">
           <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
-          <div class="np-icon mx-auto my-auto"><h1 class="issue-number">120</h1></div>
+          <div class="np-icon mx-auto my-auto"><br><h1 class="issue-number">120</h1></div>
           <h2>Issue 120</h2>
-          <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">View details »</a></p>
+          <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">신문보기 »</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4 col-md-6">
           <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
@@ -161,36 +160,120 @@
     </div>
 
 
-
-    <!-- START THE FEATURETTES -->
+    <!-- 광고안내 -->
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+    <div id="newsinfo" class="row featurette pt-5">
+      <div class="col-md-6">
+        <h3 class="featurette-heading">광고 싸이즈</h3>
+        <p class="lead">
+          3개월이상 계약시 가격입니다.<br>
+          3개월이하이면 디자인 비용이 청구됩니다.<br>
+          계약시 30%지불하시고 나머지는 발행후 지불하실수 있습니다.
+        </p>
+        <h5>안내전화: 702.343.0990</h5>
       </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+      <div class="col-md-6">
+        <table class="table table-light text-center table-striped">
+          <thead class="table-primary">
+            <tr>
+              <th scope="col"></th>
+              <th scope="col" colspan="2">매월</th>
+              <th scope="col" colspan="2">매월 (6개월)</th>
+            </tr>
+            <tr>
+              <th scope="col">Size</th>
+              <th scope="col">B/W</th>
+              <th scope="col">Color</th>
+              <th scope="col">B/W</th>
+              <th scope="col">Color</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Inside Full Page</th>
+              <td>$350</td>
+              <td>$550</td>
+              <td>$300</td>
+              <td>$500</td>
+            </tr>
+            <tr>
+              <th scope="row">Inside 1/2 Page</th>
+              <td>$250</td>
+              <td>$350</td>
+              <td>$200</td>
+              <td>$300</td>
+            </tr>
+            <tr>
+              <th scope="row">Inside 1/3 Page</th>
+              <td>$200</td>
+              <td>$250</td>
+              <td>$150</td>
+              <td>$200</td>
+            </tr>
+            <tr>
+              <th scope="row">Inside 1/4 Page</th>
+              <td>$150</td>
+              <td>$200</td>
+              <td>$100</td>
+              <td>$150</td>
+            </tr>
+            <tr>
+              <th scope="row">Cover Front</th>
+              <td>33x58mm</td>
+              <td>$250</td>
+              <td>33x58mm</td>
+              <td>$200</td>
+            </tr>
+            <tr>
+              <th scope="row">Cover 1</th>
+              <td>Page A2</td>
+              <td>$700</td>
+              <td>Page A2</td>
+              <td>$600</td>
+            </tr>
+            <tr>
+              <th scope="row">Cover 2</th>
+              <td>Page A3</td>
+              <td>$650</td>
+              <td>Page A3</td>
+              <td>$550</td>
+            </tr>
+            <tr>
+              <th scope="row">Cover 3</th>
+              <td>Page B2</td>
+              <td>$700</td>
+              <td>Page B2</td>
+              <td>$600</td>
+            </tr>
+            <tr>
+              <th scope="row">Cover 3</th>
+              <td>Page B3</td>
+              <td>$650</td>
+              <td>Page B3</td>
+              <td>$550</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
+    <div id="info" class="row featurette">
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
         <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
       </div>
       <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+        
+  
 
       </div>
     </div>
 
-    <hr class="featurette-divider">
+    <!-- <hr class="featurette-divider">
 
     <div class="row featurette">
       <div class="col-md-7">
@@ -201,7 +284,7 @@
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
 
       </div>
-    </div>
+    </div> -->
 
     <hr class="featurette-divider">
 
@@ -212,15 +295,12 @@
 
   <!-- FOOTER -->
   <footer class="container">
-    <p class="float-end"><a href="https://getbootstrap.com/docs/5.0/examples/carousel/#">Back to top</a></p>
-    <p>© 2024 Company, Inc. · <a href="https://getbootstrap.com/docs/5.0/examples/carousel/#">Privacy</a> · <a href="https://getbootstrap.com/docs/5.0/examples/carousel/#">Terms</a></p>
+    <p class="float-end"><a href="#" class="btn btn-secondary">Back to top</a></p>
+    <p>©2024 KoreanNews LasVegas · 발행인: 이귀하 / 편집: 샨박 / 디자인: Hoshi / 디자인: 이인선 / 마케팅: Ji Son,Tae Kim</p>
   </footer>
 </main>
 
-
     <script src="./assets/bootstrap.bundle.min.js.download" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-      
-  
+    <script src="script.js"></script>  
 
 </body></html>
