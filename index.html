@@ -24,6 +24,9 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -101,7 +104,7 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item" style="background-image: url('img/kkondaetube-b.jpg');background-repeat: no-repeat;background-size: cover;">
+      <div class="carousel-item" style="background-image: url('img/rio.jpg');background-repeat: no-repeat;background-size: cover;">
         <div class="container">
           <div class="carousel-caption">
             <h1>베가스 꼰대 이야기</h1>
@@ -110,12 +113,12 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item active carousel-item-start">
+      <div class="carousel-item active carousel-item-start" style="background-image: url('img/kkondaetube-b.jpg');background-repeat: no-repeat;background-size: cover;">
         <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">Browse gallery</a></p>
+          <div class="carousel-caption">
+            <h1>베가스 꼰대 이야기</h1>
+            <p><br>라스베가스 호텔, 레스토랑, 관광지들을<br>구수하고 재미있게 소개해드립니다.<br></p>
+            <p><a class="btn btn-lg btn-primary" href="https://www.youtube.com/@user-ys7li5kf9g">유튜브채널 바로가기</a></p>
           </div>
         </div>
       </div>
@@ -136,26 +139,12 @@
     <!-- 신문 -->
     <div id="newspapers">
       <div class="row pt-5">
-        <div class="col-lg-4 col-md-6">
-          <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
-          <div class="np-icon mx-auto my-auto"><br><h1 class="issue-number">120</h1></div>
-          <h2>Issue 120</h2>
-          <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">신문보기 »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4 col-md-6">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-          <h2>Heading</h2>
-          <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-          <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4 col-md-6">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-          <h2>Heading</h2>
-          <p>And lastly this, the third column of representative placeholder content.</p>
-          <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3 col-md-6" v-for="(n,i) in newsList">
+          <div class="np-icon mx-auto my-auto"><br><h1 class="issue-number text-center">{{n.title}}</h1></div>
+          <h4 class="text-center special-elite-regular">Issue {{n.title}}</h4>
+          <p class="text-center"><a class="btn btn-secondary" :href="n.link" target="_new">신문보기 »</a></p>
+        </div><!-- /.col-lg-3 -->
+        
       </div><!-- /.row -->
     </div>
 
@@ -166,13 +155,14 @@
 
     <div id="newsinfo" class="row featurette pt-5">
       <div class="col-md-6">
-        <h3 class="featurette-heading">광고 싸이즈</h3>
+        <h3 class="">광고 싸이즈</h3>
         <p class="lead">
           3개월이상 계약시 가격입니다.<br>
           3개월이하이면 디자인 비용이 청구됩니다.<br>
           계약시 30%지불하시고 나머지는 발행후 지불하실수 있습니다.
         </p>
-        <h5>안내전화: 702.343.0990</h5>
+        <img class="img-fluid rounded" src="img/priceknewsx2.jpg" alt="">
+        <h5 class="mt-2">안내전화: 702.343.0990</h5>
       </div>
       <div class="col-md-6">
         <table class="table table-light text-center table-striped">
@@ -263,14 +253,18 @@
 
     <div id="info" class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+        <h2 class="featurette-heading">코리언 뉴스는 1985년부터 발간하였으며 <span class="text-muted">지역 정보와 한국 뉴스를</span> 전달해 드리고 있습니다</h2>
+        <p class="lead">
+          부수 : 5,000부<br>
+          기간 : 격주 (2번째, 4번째 월요일)<br>
+          발행 지역 : 라스베가스<br>
+          포맷 : 9.5" x 13.5" 144쪽 - 컬러 72쪽<br>
+          배포지 : 무료 배포(180이상의 상점)<br>
+          업소록 : 매년 6월
+          
+        </p>
       </div>
-      <div class="col-md-5 order-md-1">
-        
-  
 
-      </div>
     </div>
 
     <!-- <hr class="featurette-divider">
