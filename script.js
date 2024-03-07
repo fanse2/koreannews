@@ -6,7 +6,7 @@ const app = Vue.createApp({
         }
     },
     mounted(){
-        fetch('http://kvegas.site/man/link.json.php')
+        fetch('https://kvegas.site/man/link.json.php')
         .then(res=> res.json())
         .then(json=>{
             console.log(json)
