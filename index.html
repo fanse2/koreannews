@@ -10,10 +10,8 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
 
-    
-
     <!-- Bootstrap core CSS -->
-<link href="./assets/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./assets/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -26,8 +24,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-
+    <!-- AniCollection.css library -->
+    <link rel="stylesheet" href="https://anijs.github.io/lib/anicollection/anicollection.css">
+    <link href="./assets/style.css" rel="stylesheet">
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -46,7 +45,7 @@
     </style>
 
     <!-- Custom styles for this template -->
-    <link href="./assets/style.css" rel="stylesheet">
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body id="app">
@@ -54,7 +53,7 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
     <div class="container-md">
-      <a class="navbar-brand" href="#"><img src="img/koreannews-banner.png" class="banner"></a>
+      <a class="navbar-brand" href="#"><img src="img/koreannews-banner.png" class="banner"  data-anijs="if: mouseover,  do: pulse animated"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -139,7 +138,7 @@
     <!-- 신문 -->
     <div id="newspapers">
       <div class="row pt-5">
-        <div class="col-lg-3 col-md-6" v-for="(n,i) in newsList">
+        <div class="col-lg-3 col-md-6" v-for="(n,i) in newsList"  data-anijs="if: mouseover,  do: pulse animated">
           <div class="np-icon mx-auto my-auto"><br><h1 class="issue-number text-center">{{n.title}}</h1></div>
           <h4 class="text-center special-elite-regular">Issue {{n.title}}</h4>
           <p class="text-center"><a class="btn btn-secondary" :href="n.link" target="_new">신문보기 »</a></p>
@@ -257,7 +256,22 @@
 
     <hr class="featurette-divider">
 
-    <div id="info" class="row featurette">
+    <div id="info" class="row featurette pt-5">
+      <div class="col-md-7 order-md-2">
+        <h2 class="">인사의 말씀</h2>
+        <p class="lead">
+          <strong>유</strong>명한 명구가 된 영국의 조지 말로리가 에베레스트 산을 두고 '산이 있기에 올라간다'라고 말한 것이 생각납니다. 누가 나에게 왜 언론에 뛰어들었는가라고 묻는 다면 하고 싶었고  또 사람들에게 가치 있는 정보를 나누는 일에 가치를 느껴서라고 답할 것입니다.<br>
+          <strong>라</strong>스베가스 코리언뉴스가 창간한지 어제 같은데 세월이 많이 흘렀습니다. 창간할때 저희는 몇 가지 약속을 드린바 있습니다.<br>
+          <strong>우</strong>리들 주변에서 일어나는 동네 소식을 깊이 있게 전달하고, 라스베가스에 더불어 살아가는 한인 공동체가 만들어지는데 조금이나마 공헌 하겠다 약속도 드렸습니다.<br>
+          <strong>코</strong>리언뉴스는 이러한 소통의 장을 제공하는 기능을 통해 궁극적으로 지역발전에 공헌하는 유익한 도구가 되고자 했으며, 이상의 목적을 이루기 위해 최선을 다할 것을 다짐하며,지역주민들의 사랑과 성원을 바라면서 시작했습니다.<br>
+          <strong>코</strong>리언뉴스가 이렇게 빠르게 성장할 수 있었던 데에는 지역 주민들의 관심과 많은 도움이 있었기에 가능했다고 생각합니다. 이글을 빌려 그동안 성원해 주신 주민 여러분들께 감사를 드립니다.
+        </p>
+      </div>
+      <div class="col-md-5 order-md-2">
+        <img class="img-fluid rounded" src="img/tommylee.jpg" alt="" data-anijs="if: mouseover,  do: pulse animated">
+
+      </div>
+
       <div class="col-md-7 order-md-2">
         <h2 class="">코리언 뉴스는 1985년부터 발간하였으며 <span class="text-muted">지역 정보와 한국 뉴스를</span> 전달해 드리고 있습니다</h2>
         <p class="lead">
@@ -279,7 +293,15 @@
         </p>
       </div>
       <div class="col-md-5 order-md-2">
-        <img class="img-fluid rounded" src="img/tommylee.jpg" alt="">
+        <img class="img-fluid rounded" src="img/bizbooks.png" alt="" data-anijs="if: mouseover,  do: pulse animated">
+        <h2 class="">코리언뉴스 업소록</h2>
+        <p class="lead">
+          -38년 전통의 코리언뉴스가 만들어갑니다!<br>
+          -매년 광고로 협조해 주시는 광고주 여러분께 진심으로 감사의 뜻을 전합니다.
+        </p>
+        <a class="btn btn-outline-primary m-1" href="https://docs.google.com/forms/d/e/1FAIpQLSfV4LmwkbkwpubQN4qPCAOUDXMpMXmZe_pUOkkl6oWoJVEQPQ/viewform?usp=sf_link" target="_new">업소록 추가 신청</a>
+        <a href="tel:17023430990" class="btn btn-outline-secondary m-1">📞 702.343.0990</a>
+        <a href="mailto:702korean@gmail.com" class="btn btn-outline-primary m-1">📧 702korean@gmail.com</a>
       </div>
     </div>
 
@@ -306,11 +328,15 @@
   <!-- FOOTER -->
   <footer class="container">
     <p class="float-end"><a href="#" class="btn btn-secondary">Back to top</a></p>
-    <p>©2024 KoreanNews LasVegas · 발행인:이귀하.사장.hoshi c park.편집장:샨박<br>디자인실장:Andrew Oh.디자인:이인선.그래픽:David Lee.미디어:Jun Choi.마케팅:Jason Lee</p>
+    <p>©2024 KoreanNews LasVegas · 발행인:이귀하.사장.hoshi c park.편집장:샨박<br>디자인실장:Andrew Oh.디자인:이인선.그래픽:David Lee.미디어:June Choi.마케팅:Jason Lee</p>
   </footer>
 </main>
-
     <script src="./assets/bootstrap.bundle.min.js.download" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="script.js"></script>  
+    <!-- AniJS core library -->
+    <script src="https://anijs.github.io/lib/anijs/anijs-min.js"></script> 
+
+    <!-- Include to use $addClass, $toggleClass or $removeClass -->
+    <script src="https://anijs.github.io/lib/anijs/helpers/dom/anijs-helper-dom-min.js"></script>
 
 </body></html>
